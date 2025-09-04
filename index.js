@@ -47,10 +47,22 @@ function ex2() {
       task2.appendChild(nameList);
     }
   }
+  setTimeout(ex3(users), 10);
 }
 
 // 3. Create a reusable function that takes any array and uses logic to render a list of character names in the HTML.
 // Use this function to populate the list with id "function-list".
+
+function ex3(characterList) {
+  let task3 = document.getElementById("function-list"); // target the result area for Exercise 1
+
+  for (let i = 0; i < characterList.length; i++) {
+    let username = users[i].name;
+    let nameList = document.createElement("li"); // create a <li> element for each name
+    nameList.innerText = username;
+    task3.appendChild(nameList);
+  }
+}
 
 // 4. Create a function that takes an array and an age threshold parameter.
 // The function should only display characters whose age is below the given number.
