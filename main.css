@@ -147,7 +147,8 @@ ul li:last-child {
     padding: 1rem;
   }
   section h2 {
-  font-size: 1.25rem;
+    font-size: 1.25rem;
+  }
 }
 
 /* Code-like styling for technical content */
