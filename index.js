@@ -13,7 +13,7 @@ const users = [
   { id: 9, name: "C-3PO", age: 112 },
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
-window.onload = setTimeout(ex1, 1000); //desperate move since even with calling the function onload it was missing the first 2-5 names giving null li elements... help needed on a better way to do this please :)
+window.onload = setTimeout(ex1, 200); //desperate move since even with calling the function onload it was missing the first 2-5 names giving null li elements... help needed on a better way to do this please :)
 
 // broken test data for exercise 6
 
@@ -26,7 +26,7 @@ function ex1() {
     console.log(username);
     let nameList = document.createElement("li"); // create a <li> element for each name
     nameList.innerText = username;
-    console.log(nameList);
+    // console.log(nameList);
     task.appendChild(nameList);
   }
 }
