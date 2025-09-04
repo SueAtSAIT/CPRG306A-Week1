@@ -13,7 +13,7 @@ const users = [
   { id: 9, name: "C-3PO", age: 112 },
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
-window.onload = setTimeout(ex1, 200); //desperate move since even with calling the function onload it was missing the first 2-5 names giving null li elements... help needed on a better way to do this please :)
+window.onload = setTimeout(ex1, 50); //desperate move since even with calling the function onload it was missing the first 2-5 names giving null li elements... help needed on a better way to do this please :)
 
 // broken test data for exercise 6
 
@@ -29,9 +29,25 @@ function ex1() {
     // console.log(nameList);
     task.appendChild(nameList);
   }
+  setTimeout(ex2, 10); //now each function must call the next, ugh...
 }
 // 2. Print out the names of characters whose age is less than 40 in the console,
 // then render them in the HTML list with id "young-characters-list"
+function ex2() {
+  let task2 = document.getElementById("young-characters-list"); // target the result area for Exercise 2
+
+  for (let i = 0; i < users.length; i++) {
+    let username = users[i].name;
+    let userAge = users[i].age;
+    if (userAge < 40) {
+      console.log(`${username} is ${userAge} years old.`);
+      let nameList = document.createElement("li"); // create a <li> element for each name
+      nameList.innerText = username;
+      // console.log(nameList);
+      task2.appendChild(nameList);
+    }
+  }
+}
 
 // 3. Create a reusable function that takes any array and uses logic to render a list of character names in the HTML.
 // Use this function to populate the list with id "function-list".
