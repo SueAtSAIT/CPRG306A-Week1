@@ -58,9 +58,13 @@ function ex3(characterList) {
 
   for (let i = 0; i < characterList.length; i++) {
     let username = users[i].name;
-    let nameList = document.createElement("li"); // create a <li> element for each name
-    nameList.innerText = username;
-    task3.appendChild(nameList);
+    if (username) {
+      let nameList = document.createElement("li"); // create a <li> element for each name
+      nameList.innerText = username;
+      task3.appendChild(nameList);
+    } else {
+      console.error(`element ${i} does not have a name.`);
+    }
   }
   setTimeout(ex4(users, 30), 10);
 }
@@ -74,20 +78,27 @@ function ex4(characterList, ageLimit) {
 
   for (let i = 0; i < characterList.length; i++) {
     let username = characterList[i].name;
-    let userAge = characterList[i].age;
-    if (userAge < ageLimit) {
-      console.log(
-        `${username} is ${userAge} years old. Adding to filtered list.`
-      );
-      let nameList = document.createElement("li"); // create a <li> element for each name
-      nameList.innerText = username;
-      task4.appendChild(nameList);
+    if (username) {
+      let userAge = characterList[i].age;
+      if (userAge < ageLimit) {
+        console.log(
+          `${username} is ${userAge} years old. Adding to filtered list.`
+        );
+        let nameList = document.createElement("li"); // create a <li> element for each name
+        nameList.innerText = username;
+        task4.appendChild(nameList);
+      }
+    } else {
+      console.error(`element ${i} does not have a name.`);
     }
   }
 }
 
 // 5. Add error handling to your functions that will log an error message using console.error()
 // if any object doesn't have a "name" property. Display any error messages in the div with id "error-messages"
+
+let task5r = document.getElementById("error-handling-list"); // target the result area for Exercise 5
+let task5m = document.getElementById("error-messages"); // target the error message area for Exercise 5
 
 // 6. Test your error handling by creating a second array that's intentionally broken (missing name properties)
 // and passing it to your functions.
