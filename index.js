@@ -16,7 +16,18 @@ const users = [
 window.onload = setTimeout(ex1, 50); //desperate move since even with calling the function onload it was missing the first 2-5 names giving null li elements... help needed on a better way to do this please :)
 
 // broken test data for exercise 6
-
+const broken = [
+  { id: 1, name: "Luke Skywalker", age: 23 },
+  { id: 2, name: "Darth Vader", age: 45 },
+  { id: 3, age: 23 },
+  { id: 4, name: "Obi-Wan Kenobi", age: 57 },
+  { id: 5, name: "Yoda", age: 900 },
+  { id: 6, name: "Han Solo", age: 32 },
+  { id: 7, name: "Chewbacca", age: 234 },
+  { id: 8, name: "R2-D2", age: 33 },
+  { id: 9, name: "C-3PO", age: 112 },
+  { id: 10, age: 27 },
+];
 // 1. Print out the names of each character in the console, then render them in the HTML list with id "names-list"
 function ex1() {
   let task = document.getElementById("names-list"); // target the result area for Exercise 1
@@ -103,3 +114,10 @@ let task5m = document.getElementById("error-messages"); // target the error mess
 // 6. Test your error handling by creating a second array that's intentionally broken (missing name properties)
 // and passing it to your functions.
 // Verify that your error handling works correctly and displays errors in the div with id "broken-array-errors"
+
+console.log("commenting ex6 out since error handling is not working...");
+// setTimeout(ex3(broken), 1000);
+// console.log("output from exercise 6 calling ex3:");
+
+// setTimeout(ex4(broken, 30), 1000);
+// console.log("output from exercise 6 calling ex4:");
