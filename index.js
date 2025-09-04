@@ -54,7 +54,7 @@ function ex2() {
 // Use this function to populate the list with id "function-list".
 
 function ex3(characterList) {
-  let task3 = document.getElementById("function-list"); // target the result area for Exercise 1
+  let task3 = document.getElementById("function-list"); // target the result area for Exercise 3
 
   for (let i = 0; i < characterList.length; i++) {
     let username = users[i].name;
@@ -62,11 +62,29 @@ function ex3(characterList) {
     nameList.innerText = username;
     task3.appendChild(nameList);
   }
+  setTimeout(ex4(users, 30), 10);
 }
 
 // 4. Create a function that takes an array and an age threshold parameter.
 // The function should only display characters whose age is below the given number.
 // Render results in the list with id "age-filter-list"
+
+function ex4(characterList, ageLimit) {
+  let task4 = document.getElementById("age-filter-list"); // target the result area for Exercise 4
+
+  for (let i = 0; i < characterList.length; i++) {
+    let username = characterList[i].name;
+    let userAge = characterList[i].age;
+    if (userAge < ageLimit) {
+      console.log(
+        `${username} is ${userAge} years old. Adding to filtered list.`
+      );
+      let nameList = document.createElement("li"); // create a <li> element for each name
+      nameList.innerText = username;
+      task4.appendChild(nameList);
+    }
+  }
+}
 
 // 5. Add error handling to your functions that will log an error message using console.error()
 // if any object doesn't have a "name" property. Display any error messages in the div with id "error-messages"
