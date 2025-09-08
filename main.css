@@ -87,6 +87,14 @@ section p {
   font-weight: 500;
 }
 
+#error-messages p {
+  color: #495057;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  margin-left: 1.75rem;
+  font-weight: 500;
+}
+
 /* List styles */
 ul {
   list-style: none;

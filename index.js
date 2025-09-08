@@ -98,7 +98,7 @@ function ex4(characterList, ageLimit) {
         task4.appendChild(nameList);
       }
     } else {
-      console.error(`element ${i} does not have a name.`);
+      console.error(`element [${i}] does not have a name.`);
     }
   }
 }
@@ -106,16 +106,47 @@ function ex4(characterList, ageLimit) {
 // 5. Add error handling to your functions that will log an error message using console.error()
 // if any object doesn't have a "name" property. Display any error messages in the div with id "error-messages"
 
-let task5r = document.getElementById("error-handling-list"); // target the result area for Exercise 5
-let task5m = document.getElementById("error-messages"); // target the error message area for Exercise 5
+ex5(broken, 53);
+
+function ex5(characterList, ageLimit) {
+  let task5r = document.getElementById("error-handling-list"); // target the result area for Exercise 5
+  let task5m = document.getElementById("error-messages"); // target the error message area for Exercise 5
+  task5r.innerHTML = `<p>The characters below age ${ageLimit} are:</p>`;
+  task5m.innerHTML =
+    "<p style='font-weight: 700'>Error messages received while processing the above:</p>";
+
+  for (let i = 0; i < characterList.length; i++) {
+    let username = characterList[i].name;
+    if (username) {
+      let userAge = characterList[i].age;
+      if (userAge && userAge < ageLimit) {
+        console.log(
+          `${username} is ${userAge} years old. Adding to filtered list.`
+        );
+        let nameList = document.createElement("li"); // create a <li> element for each name
+        nameList.innerText = username;
+        task5r.appendChild(nameList);
+      } else if (userAge && userAge >= ageLimit) {
+        console.log(
+          `${username} is ${userAge} years old. TOO OLD for filtered list.`
+        );
+      } else {
+        let errList = document.createElement("p"); // create a <p> element for each error message
+        let errMessage = `* ${username} does not have an age.`;
+        console.error(errMessage);
+        errList.innerText = errMessage;
+        task5m.appendChild(errList);
+      }
+    } else {
+      let errList = document.createElement("p"); // create a <p> element for each error message
+      let errMessage = `* element [${i}] does not have a name.`;
+      console.error(errMessage);
+      errList.innerText = errMessage;
+      task5m.appendChild(errList);
+    }
+  }
+}
 
 // 6. Test your error handling by creating a second array that's intentionally broken (missing name properties)
 // and passing it to your functions.
 // Verify that your error handling works correctly and displays errors in the div with id "broken-array-errors"
-
-console.log("commenting ex6 out since error handling is not working...");
-// setTimeout(ex3(broken), 1000);
-// console.log("output from exercise 6 calling ex3:");
-
-// setTimeout(ex4(broken, 30), 1000);
-// console.log("output from exercise 6 calling ex4:");
