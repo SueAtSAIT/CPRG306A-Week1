@@ -20,7 +20,7 @@ const broken = [
   { id: 2, name: "Darth Vader", age: 45 },
   { id: 3, age: 23 },
   { id: 4, name: "Obi-Wan Kenobi", age: 57 },
-  { id: 5, name: "Yoda", age: 900 },
+  { id: 5, name: "Yoda" },
   { id: 6, name: "Han Solo", age: 32 },
   { id: 7, age: 234 },
   { id: 8, name: "R2-D2", age: 33 },
