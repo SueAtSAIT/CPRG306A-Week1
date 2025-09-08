@@ -150,3 +150,8 @@ function ex5(characterList, ageLimit) {
 // 6. Test your error handling by creating a second array that's intentionally broken (missing name properties)
 // and passing it to your functions.
 // Verify that your error handling works correctly and displays errors in the div with id "broken-array-errors"
+
+let task6m = document.getElementById("broken-array-errors"); // target the error message area for Exercise 6
+task6m.innerHTML =
+  "<p style='font-weight: 700'>Please see Exercise 5 for name and age output & error handling.</p>";
+// since I think this has already been done in ex5.
