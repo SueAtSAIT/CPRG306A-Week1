@@ -80,11 +80,16 @@ section p {
   font-weight: 500;
 }
 
+footer,
 .output p {
   color: #495057;
   font-size: 0.9rem;
   margin-bottom: 0.75rem;
   font-weight: 500;
+}
+
+footer {
+  margin-left: 10rem;
 }
 
 #error-messages p {
