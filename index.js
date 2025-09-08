@@ -13,7 +13,7 @@ const users = [
   { id: 9, name: "C-3PO", age: 112 },
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
-window.onload = setTimeout(ex1, 50); //desperate move since even with calling the function onload it was missing the first 2-5 names giving null li elements... help needed on a better way to do this please :)
+// window.onload = setTimeout(ex1, 50); //desperate move since even with calling the function onload it was missing the first 2-5 names giving null li elements... help needed on a better way to do this please :)
 
 // broken test data for exercise 6
 const broken = [
@@ -23,7 +23,7 @@ const broken = [
   { id: 4, name: "Obi-Wan Kenobi", age: 57 },
   { id: 5, name: "Yoda", age: 900 },
   { id: 6, name: "Han Solo", age: 32 },
-  { id: 7, name: "Chewbacca", age: 234 },
+  { id: 7, age: 234 },
   { id: 8, name: "R2-D2", age: 33 },
   { id: 9, name: "C-3PO", age: 112 },
   { id: 10, age: 27 },
