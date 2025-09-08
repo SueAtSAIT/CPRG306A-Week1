@@ -13,7 +13,6 @@ const users = [
   { id: 9, name: "C-3PO", age: 112 },
   { id: 10, name: "Padmé Amidala", age: 27 },
 ];
-// window.onload = setTimeout(ex1, 50); //desperate move since even with calling the function onload it was missing the first 2-5 names giving null li elements... help needed on a better way to do this please :)
 
 // broken test data for exercise 6
 const broken = [
@@ -29,7 +28,7 @@ const broken = [
   { id: 10, age: 27 },
 ];
 // 1. Print out the names of each character in the console, then render them in the HTML list with id "names-list"
-// function ex1() {
+
 let task = document.getElementById("names-list"); // target the result area for Exercise 1
 
 for (let i = 0; i < users.length; i++) {
@@ -40,11 +39,10 @@ for (let i = 0; i < users.length; i++) {
   // console.log(nameList);
   task.appendChild(nameList);
 }
-//   setTimeout(ex2, 10); //now each function must call the next, ugh...
-// }
+
 // 2. Print out the names of characters whose age is less than 40 in the console,
 // then render them in the HTML list with id "young-characters-list"
-// function ex2() {
+
 let task2 = document.getElementById("young-characters-list"); // target the result area for Exercise 2
 
 for (let i = 0; i < users.length; i++) {
@@ -58,8 +56,7 @@ for (let i = 0; i < users.length; i++) {
     task2.appendChild(nameList);
   }
 }
-//   setTimeout(ex3(users), 10);
-// }
+ex3(users);
 
 // 3. Create a reusable function that takes any array and uses logic to render a list of character names in the HTML.
 // Use this function to populate the list with id "function-list".
@@ -77,8 +74,8 @@ function ex3(characterList) {
       console.error(`element ${i} does not have a name.`);
     }
   }
-  setTimeout(ex4(users, 30), 10);
 }
+ex4(users, 30);
 
 // 4. Create a function that takes an array and an age threshold parameter.
 // The function should only display characters whose age is below the given number.
