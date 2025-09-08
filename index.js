@@ -83,6 +83,7 @@ ex4(users, 30);
 
 function ex4(characterList, ageLimit) {
   let task4 = document.getElementById("age-filter-list"); // target the result area for Exercise 4
+  task4.innerHTML = `<p>The characters below age ${ageLimit} are:</p>`;
 
   for (let i = 0; i < characterList.length; i++) {
     let username = characterList[i].name;
